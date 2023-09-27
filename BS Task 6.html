@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bs Task 6</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; 
+        }
+        .form-container {
+            background-color: #ffffff;
+            width: 500px; 
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 2em; 
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        .invalid-feedback {
+            color: red;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+  <div class="containers" style="height: 30em;">
+    <form class="form-container" id="myForm" onsubmit="return validateForm()" action="https://www.amazon.in">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control is-invalid" id="name" required>
+        <div class="invalid-feedback" id="nameFeedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control is-invalid" id="email" required>
+        <div class="invalid-feedback" id="emailFeedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control is-invalid" id="password" required>
+        <div class="invalid-feedback" id="passwordFeedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="hobbies">Hobbies</label>
+        <select class="custom-select" id="hobbies">
+            <option selected></option>
+            <option value="1">Playing</option>
+            <option value="2">Reading</option>
+            <option value="3">Studying</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
+  </div>
+  <script>
+    function validateForm() {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        if (document.getElementById('name').value.trim() === '') {
+            document.getElementById('nameFeedback').textContent = 'Name is required';
+        }
+        if (document.getElementById('email').value.trim() === '') {
+            document.getElementById('emailFeedback').textContent = 'Email is required';
+        }
+        if (document.getElementById('password').value.trim() === '') {
+            document.getElementById('passwordFeedback').textContent = 'Password is required';
+        }
+        return false;
+    }
+</script>
+  <script src="script.js"></script>
+
+</body>
+</html>

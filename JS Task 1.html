@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 1</title>
+    <style>
+        #id{
+            background-color: white;
+            cursor:pointer;
+        }
+        #id:hover{
+            background-color: blue;
+            border-color: blue;
+            -webkit-text-fill-color: white;
+        }
+        .java{
+            padding-left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Write a JavaScript function that reverse  number</li>
+        <li>Sample Data and output</li>
+    </ul>
+    <div class="java">
+        <span>Example x = </span>
+        <input type="text" id="input" placeholder="Enter the number..." required/></br>
+        <span>
+            <button type="submit" id="id" onClick="return alphabet_order()">Expected Output : </button>
+        </span>
+        <span id="result"></span>
+     </div>
+    <script>
+        function alphabet_order(){
+            const str = document.getElementById('input');
+            const str1 = str.value;
+            const sorted = str1.split('').reverse().join('');
+            document.getElementById('result').innerHTML = sorted;
+            console.log("Example x = "+str1+";");
+            console.log("Expected Output : "+sorted);
+        }
+    </script>
+</body>
+</html>
